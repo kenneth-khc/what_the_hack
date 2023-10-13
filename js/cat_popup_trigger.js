@@ -9,7 +9,7 @@ function randomize() {
 
 	
 	const image = document.createElement("img")
-	image.src = "image_captcha/blepping-PaleSketches01-e1532597339182.jpeg";
+	image.src = "images/blepping-PaleSketches01-e1532597339182.jpeg";
 	image.style.width = "10px";
 	image.style.height = "10px";
 	image.style.position = "absolute";
