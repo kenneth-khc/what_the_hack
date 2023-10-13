@@ -63,16 +63,17 @@ body {
     background-color: #DDDDDD;
 }
 
-#controls > div > span {
+/* If it's the minimize button */
+/* #controls > div > span {
     position: relative;
     bottom: 3px;
-}
+} */
 
 /* CONTENT SECITION */
 #content {
     background: #c0c0c0;
     max-height: 554px;
-    overflow: scroll;
+    overflow-y: scroll;
     border: 2px solid #808080;
     border-top: 2px solid #e0e0e0;
     border-left: 2px solid #e0e0e0;
