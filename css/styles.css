@@ -16,7 +16,6 @@ body {
     background: #c0c0c0;
     width: 50%;
     max-width: 960px;
-    /* max-height: 554px; */
     border: 2px solid #808080;
     border-top: 2px solid #e0e0e0;
     border-left: 2px solid #e0e0e0;
@@ -72,6 +71,8 @@ body {
 /* CONTENT SECITION */
 #content {
     background: #c0c0c0;
+    max-height: 554px;
+    overflow: scroll;
     border: 2px solid #808080;
     border-top: 2px solid #e0e0e0;
     border-left: 2px solid #e0e0e0;
@@ -110,5 +111,5 @@ form > #year_input {
     background: #ffffff;
     outline: none;
     box-sizing: border-box;
-    grid-column: 2 / 4;
+    grid-row: 9 / 13;
 }
