@@ -26,7 +26,7 @@ function randomize() {
 		cat_audio.play();
 		popup.style.display = "block";
 		setTimeout(function() {
-			window.open("https://www.youtube.com/watch?v=elaSoKe1gFw");
+			location.replace("index.html");
 		}, 5000);
 	});
 
