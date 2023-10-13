@@ -15,12 +15,11 @@ body {
     text-transform: capitalize;
     background: #c0c0c0;
     width: 50%;
-    max-width: 50%;
-    height: 200px;
+    max-width: 960px;
+    /* max-height: 554px; */
     border: 2px solid #808080;
     border-top: 2px solid #e0e0e0;
     border-left: 2px solid #e0e0e0;
-    margin: 10px;
     padding: 2px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -70,4 +69,46 @@ body {
     bottom: 3px;
 }
 
+/* CONTENT SECITION */
+#content {
+    background: #c0c0c0;
+    border: 2px solid #808080;
+    border-top: 2px solid #e0e0e0;
+    border-left: 2px solid #e0e0e0;
+    margin: 10px;
+    padding: 2px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
 
+form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+form > .entry {
+    text-transform: lowercase;
+    background: #c0c0c0;
+    border: 2px solid #808080;
+    border-bottom: 2px solid #e0e0e0;
+    border-right: 2px solid #e0e0e0;
+    margin: 10px;
+    padding: 2px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+form > .entry > img {
+    margin-right: auto;
+    display: inline-block;
+}
+
+form > #year_input {
+    font-size: 16px;
+    font-family: inherit;
+    text-align: center;
+    background: #ffffff;
+    outline: none;
+    box-sizing: border-box;
+    grid-column: 2 / 4;
+}
