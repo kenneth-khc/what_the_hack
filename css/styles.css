@@ -1,6 +1,9 @@
 body {
     color: #fdffff;
-    background: #008080;
+    background: url("../images/1536061.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -84,36 +87,52 @@ body {
 
 form {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
 }
 
-form > .entry {
-    text-transform: lowercase;
-    background: #c0c0c0;
-    border: 2px solid #808080;
-    border-bottom: 2px solid #e0e0e0;
-    border-right: 2px solid #e0e0e0;
-    margin: 10px;
-    padding: 2px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-form > .entry > img {
-    margin-right: auto;
-    display: inline-block;
-}
-
-form > #year-input {
+form > #password {
     font-size: 16px;
     font-family: inherit;
     text-transform: capitalize;
     text-align: center;
     color: #666666;
     background: #ffffff;
+    border: 2px solid #808080;
+    border-bottom: 2px solid #e0e0e0;
+    border-right: 2px solid #e0e0e0;
     outline: none;
-    box-sizing: border-box;
-    grid-row: 2;
-    grid-column: 2;
+}
+
+form > #password {
+    font-size: 16px;
+    font-family: inherit;
+    text-transform: capitalize;
+    text-align: left;
+    color: #666666;
+    background: #ffffff;
+    border: 2px solid #808080;
+    border-bottom: 2px solid #e0e0e0;
+    border-right: 2px solid #e0e0e0;
+    outline: none;
+}
+
+form > select {
+    font-size: 16px;
+    font-family: inherit;
+    text-transform: capitalize;
+    text-align: center;
+    color: #666666;
+    background: #ffffff;
+    border: 2px solid #808080;
+    border-bottom: 2px solid #e0e0e0;
+    border-right: 2px solid #e0e0e0;
+    outline: none;
+    display: none;
+}
+
+#content > p {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0 auto 0 1px;
+    padding: 0;
 }
