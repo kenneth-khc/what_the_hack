@@ -105,12 +105,15 @@ form > .entry > img {
     display: inline-block;
 }
 
-form > #year_input {
+form > #year-input {
     font-size: 16px;
     font-family: inherit;
+    text-transform: capitalize;
     text-align: center;
+    color: #666666;
     background: #ffffff;
     outline: none;
     box-sizing: border-box;
-    grid-row: 9 / 13;
+    grid-row: 2;
+    grid-column: 2;
 }
