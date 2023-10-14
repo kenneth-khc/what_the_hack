@@ -1,5 +1,6 @@
 body {
     background: #008080;
+    /* background-image: url("images/cat_sleep.gif"); */
     margin: 0px;
     padding: 0px;
     display: flex;
@@ -7,7 +8,7 @@ body {
     align-items: center;
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    overflow: auto;
 }
 
 #instructions {
@@ -87,6 +88,10 @@ body {
 .popup {
     position: absolute;
     display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
 }
 
 #popup_img {
@@ -100,8 +105,6 @@ body {
 #popup_text {
     position: absolute;
     z-index: 2;
-    top: 50vh;
-    right: 40vw;
     animation: fadeIn 5s ease-in;
     font-size: 50px;
 }

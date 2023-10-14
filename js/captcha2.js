@@ -24,7 +24,7 @@ function randomize() {
 	image.addEventListener("click", function() {
 		cat_audio.volume = 0.5;
 		cat_audio.play();
-		popup.style.display = "block";
+		popup.style.display = "flex";
 		setTimeout(function() {
 			location.replace("index.html");
 		}, 5000);
