@@ -1,0 +1,150 @@
+body {
+    background-image: url("../images/windows.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+#instructions {
+    background: #C0C0C0;
+    margin: 30px auto;
+    padding: 5px;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 3px 4px rgba(12,12,12,0.2);
+    border: 5px #828182;
+    border-style: inset;
+}
+
+#instructions_text {
+    animation: flash 0.5s linear infinite;
+}
+
+@keyframes flash {
+    0% {
+        color: red;
+    }
+    50% {
+        color: white;
+    }
+    100% {
+        color: red;
+    }
+}
+
+#banner {
+    background: #020080;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2.5px;
+}
+
+.symbol {
+    font-size: 10px;
+    background-color: #C0C0C0;
+    border-style: inset;
+    border: 1px 1px #C0C0C0;
+    width: 16px;
+    text-align: center;
+    color: #030303;
+}
+
+#q_symbol {
+    margin-right: 5px;
+}
+
+.captcha_grid {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    background: #C0C0C0;
+    margin: 0px auto;
+    padding: 0px;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 3px 4px rgba(12,12,12,0.2);
+    border: 5px #828182;
+    border-style: inset;
+}
+
+.images img {
+    width: 600px;
+    height: 275px;
+    padding: 15px;
+    transition: transform 0.5s;
+}
+
+.images img:hover {
+    transform: scale(1.1);
+}
+
+.popup {
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+#popup_img {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    animation: fadeIn 2s ease-in;
+}
+
+#popup_text {
+    position: absolute;
+    z-index: 2;
+    animation: fadeIn 5s ease-in;
+    font-size: 50px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#moving_cat_box {
+    top: 0;
+    left: 0;
+    margin: 20px;
+    position: absolute;
+}
+
+#moving_cat {
+    width: 150px;
+    height: 100px;
+    animation: around 60s linear infinite;
+}
+
+@keyframes around {
+    0% {
+        transform: translate(5vw);
+    }
+    25% {
+        transform: translate(90vw);
+    }
+    50% {
+        transform: translate(90vw, 90vh);
+    }
+    75% {
+        transform: translate(5vw, 90vh);
+    }
+    100% {
+        transform: translate(5vw, 0);
+    }
+}
