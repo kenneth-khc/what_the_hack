@@ -4,5 +4,9 @@ const dog_audio = document.getElementById("bark");
 for (var i = 0; i < dog_img.length; i++) {
 	dog_img[i].addEventListener("click", function() {
 		dog_audio.play();
+		this.style.cursor = "wait";
+	});
+	dog_img[i].addEventListener("mouseenter", function() {
+		this.style.cursor = "pointer";
 	});
 }

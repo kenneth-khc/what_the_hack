@@ -1,10 +1,11 @@
+const popup = document.getElementById("popup");
+
 window.onload = function () {
 	randomize();
 };
 
 function randomize() {
 	const container = document.getElementsByTagName("BODY")[0];
-	const popup = document.getElementById("popup");
 	const cat_audio = document.getElementById("meow");
 
 	
@@ -42,3 +43,9 @@ function randomize() {
 
 	container.appendChild(image);
 }
+
+setInterval(function() {
+	if (popup.style.display != "flex")
+		
+		alert("MEOW MEOW MEOW");
+}, 5000);
