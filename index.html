@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Template</title>
+	<link href="css/styles.css" type="text/css" rel="stylesheet" /> 
 </head>
 <body>
-    <div id="pop-up">
-        <div id="banner">
-            <p>Enter Umbrella Password: </p>
-            <div id="q_symbol" class="symbol">?</div>
-            <div id="x_symbol" class="symbol">X</div>
-        </div>
-        <img src="images.jpeg" alt="" />
-        <form action="get">
-            <label for="username">User Login:</label>
-            <input id="username" type="text" name="username"/>
-            <label for="password">Password:</label>
-            <input id="password" type="password" name="password"/>
-        </form>
-    </div>
+	<div id="pop-up">
+		<div class="header">
+			<p class="title">My First Program</p>
+			<div class="controls">
+				<button aria-label="Minimize"></button>
+				<button aria-label="Maximize"></button>
+				<button aria-label="Close"></button>
+			</div>
+		</div>
+		<div class="body">
+			<p class="content">There are just so many possibilities:</p>
+			<ul>
+				<li>A Task Manager</li>
+				<li>A Notepad</li>
+				<li>Or even a File Explorer!</li>
+			</ul>
+			<div class="controls" style="display: none">
+				<button>OK</button>
+				<button>Cancel</button>
+			</div>
+		</div>
+		<div class="status">
+			<p>Press F1 for help</p>
+			<p>Slide 1</p>
+			<p>CPU Usage: 14%</p>
+		</div>
+	</div>
+	<script src="js/main.js"></script>
 </body>
 </html>
