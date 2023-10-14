@@ -8,6 +8,8 @@ setTimeout(function() {
 }, 1000);
 
 function countdown_timer() {
+	if (time_in_sec <= 0)
+		time_in_sec = 0;
 	const minutes = Math.floor(time_in_sec / 60);
 	let seconds = time_in_sec % 60;
 
