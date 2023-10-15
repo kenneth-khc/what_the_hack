@@ -77,3 +77,54 @@ form > input {
         opacity: 1;
     }
 }
+
+#text_container {
+    width: 1000px;
+    height: 1000px;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    z-index: 99;
+}
+
+@font-face {
+    font-family: W95A;
+    src: url(https://fonts.cdnfonts.com/s/45697/W95FA.woff);
+}
+
+#text_content {
+    top: 0px;
+    left: 0px;
+    position: relative;
+    font-family: W95A, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    margin: 10px;
+    padding: 0px;
+}
+
+#our_page {
+    animation: fadeIn2 10s ease-in-out forwards;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 100;
+}
+
+@keyframes fadeIn2 {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    26% {
+        opacity: 0.5;
+    }
+    27% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}

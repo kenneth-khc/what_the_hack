@@ -39,3 +39,27 @@ password.addEventListener("keypress", function() {
 password.addEventListener("keyrelease", function() {
 	audio.play();
 });
+
+let i = 0;
+let text = "oh hi there !!\nthank you and welcome to our page ♥\n\
+we would like to thank the bocals for organizing this hackathon!\n\
+It's been a really fun and enjoyable experience to join one albeit \
+it's not\nreally a \"real\" hackathon.\nthroughout the entire process \
+we have really learnt a lot from coding in\na new language to working \
+together as a team.\nFrom this will definitely muster up our courage to \
+join a real one next time!\n\nNow please enjoy the website ♥\n\n\
+thank you all so much !!";
+let speed = 50;
+
+function type() {
+	if (i < text.length) {
+		if (text.charAt(i) == '\n')
+			document.getElementById("text_content").innerHTML += "<br>";
+		else
+			document.getElementById("text_content").innerHTML += text.charAt(i);
+		i++;
+		setTimeout(type, speed);
+	}
+};
+
+document.getElementById("text_content").addEventListener("load", type());
