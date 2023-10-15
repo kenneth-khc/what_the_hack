@@ -1,8 +1,9 @@
 const dog_img = document.getElementsByClassName("images");
 const dog_audio = document.getElementById("bark");
 
-for (var i = 0; i < dog_img.length; i++) {
+for (let i = 0; i < dog_img.length; i++) {
 	dog_img[i].addEventListener("click", function() {
+		dog_audio.currentTime = 0;
 		dog_audio.play();
 		this.style.cursor = "wait";
 	});
@@ -12,6 +13,7 @@ for (var i = 0; i < dog_img.length; i++) {
 }
 
 const popup = document.getElementById("popup");
+const cat_audio = document.getElementById("meow");
 
 window.onload = function () {
 	randomize();
@@ -19,15 +21,13 @@ window.onload = function () {
 
 function randomize() {
 	const container = document.getElementsByTagName("BODY")[0];
-	const cat_audio = document.getElementById("meow");
-
-	
 	const image = document.createElement("img")
+
 	image.src = "images/blepping-PaleSketches01-e1532597339182.jpeg";
 	image.style.width = "10px";
 	image.style.height = "10px";
 	image.style.position = "absolute";
-	
+
 	const containerWidth = container.clientWidth;
 	const containerHeight = container.clientHeight;
 	const randomTop = Math.floor(Math.random() * (containerHeight - 100));
@@ -36,6 +36,7 @@ function randomize() {
 	image.style.left = randomLeft + "px";
 	
 	image.addEventListener("click", function() {
+		cat_audio.currentTime = 0;
 		cat_audio.volume = 0.5;
 		cat_audio.play();
 		popup.style.display = "flex";
@@ -59,6 +60,7 @@ function randomize() {
 
 setInterval(function() {
 	if (popup.style.display != "flex")
-		
-		alert("MEOW MEOW MEOW");
+		alert("Congratulations you just won an iphone15.!\n\
+Please proceed here to claim your reward:\n\
+https://shorturl.at/qDG36");
 }, 5000);
