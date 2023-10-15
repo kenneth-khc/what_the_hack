@@ -1,0 +1,44 @@
+body {
+	background-image: url(../images/windows.jpeg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.circle {
+	background-color: rgba(255, 255, 255, 0.5); ;
+	width: 200px;
+	height: 200px;
+	/* border: 4px solid black; */
+	border-radius: 50%;
+	position: absolute;
+	cursor: grab;
+	box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.9);
+}
+
+.circle > img {
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	user-select: none;
+	transform-origin: bottom bottom;
+	animation: bounce 1s infinite alternate;
+    transition: transform 0.3s ease-in-out;
+	pointer-events: none; /* Prevent mouse events on the image */
+}
+
+@keyframes bounce {
+	0% {
+	  transform: translateX(-50%) translateY(0) rotate(0deg);
+	}
+	100% {
+	  transform: translateX(-50%) translateY(calc(-1 * var(--random-height))) rotate(360deg) scaleX(var(--random-x)); /* Adjust the bounce height as needed */
+	}
+}
