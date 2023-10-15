@@ -14,7 +14,7 @@ body {
 
 .pop-up {
 	background: linear-gradient(180deg,#0997ff,#0053ee 8%,#0050ee 40%,#06f 88%,#06f 93%,#005bff 95%,#003dd7 96%,#003dd7);
-	width: 260px;
+	width: 400px;
 	padding: 0px 5px 3px 3px;
 	border-top: 1px solid #0831d9;
 	border-right: 1px solid #001ea0;
@@ -81,6 +81,10 @@ body {
 	filter: brightness(0.9);
 }
 
+button[aria-label="Help"] {
+    background-image: url(../icons/help.png);
+}
+
 button[aria-label="Close"] {
 	background-image: url(../icons/close.png);
 }
@@ -91,50 +95,40 @@ button[aria-label="Close"] {
 	font-family: Arial, Helvetica, sans-serif;
 	color: #222;
 	background-color: #ece9d8;
-	padding: 8px 6px 8px; /* use 8px for top/bottom margin, if need */
+	padding: 0px 0px 0px; /* use 8px for top/bottom margin, if need */
 	display: flex;
 	flex-direction: column;
 }
 
-.pop-up > .content > .message {
-	display: grid;
-	grid-template-columns: 1fr 4fr;
-	place-items: center;
+.pop-up > .content > .navbar {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
-.pop-up > .content > .message > p {
-	line-height: 1.5;
-	justify-self: start;
+.pop-up > .content > .navbar > li {
+    font-size: 12px;
+    font-family: "Pixelated MS Sans Serif", Arial;
+    padding: 3px 4px;
+    cursor: pointer;
 }
 
-.pop-up > .content > .buttons {
-	display: flex;
-	justify-content: center;
+.pop-up > .content > .navbar > li:hover {
+    color: #ffffff;
+    background-color: #0078d7;
 }
 
-.pop-up > .content > .buttons > button {
-	font-size: 11px;;
-	font-family: "Pixelated MS Sans Serif", Arial;
-	background-color: linear-gradient(180deg,#fff,#ecebe5 86%,#d8d0c4);
-	min-width: 75px;
-    min-height: 23px;
-	margin-left: 6px;
-    padding: 0 12px;
-	border: none;
-	border-radius: 3px;
-	outline: 1px solid #003c74;
-	box-shadow: none;
-	box-sizing: border-box;
-}
-
-.pop-up > .content > .buttons > button:active {
-	background-color: #d4d4d4;
-}
-
-.pop-up > .content > .buttons > button:focus {
-	border: 2px solid #FFD700;
-}
-
-.pop-up > .content > .buttons > button:focus:not(:hover) {
-	border: 2px solid #d6e4f3;
+/* Animation Section */
+.pop-up > .animation {
+    font-size: 16px;
+    font-family: "Pixelated MS Sans Serif", Arial;
+    background-color: #ffffff;
+    height: 315px;
+    margin: 0px;
+    padding: 12px 8px;
+    box-shadow: inset 0 1px 2px grey;
+    overflow: scroll;
 }

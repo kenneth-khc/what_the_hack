@@ -4,27 +4,31 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link href="css/alert.css" type="text/css" rel="stylesheet" />
+	<link href="css/template.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 	<div class="pop-up">
 		<div class="header">
-			<p class="title">Error</p>
+			<p class="title">Untitled - Notepad</p>
 			<div class="controls">
 				<audio id="mysound" src="audio/erro.mp3"></audio>
+				<button aria-label="Help"></button>
 				<button aria-label="Close"></button>
 			</div>
 		</div>
 		<div class="content">
-			<div class="message">
-				<img src="icons/alert.png" alt="error picture" width="32px" draggable="false"/>
-				<p>Click "Fix" to fix error.</p>
-			</div>
-			<dic class="buttons">
-				<button>Fix</button>
-			</dic>
+			<ul class="navbar">
+				<li>File</li>
+				<li>Edit</li>
+				<li>Search</li>
+				<li>Help</li>
+			</ul>
 		</div>
+		<p class="animation">
+			hi there<br />
+			how
+		</p>
 	</div>
-	<script src="js/alert.js"></script>
+	<script src="js/template.js"></script>
 </body>
 </html>

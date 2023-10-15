@@ -77,12 +77,6 @@ function features(pop_up) {
             toggleAudio();
         }
     });
-    // Close functionality
-    var closeButton = pop_up.querySelector(".content > .buttons > button:first-child");
-    closeButton.addEventListener("click", function() {
-        var pop_up = this.closest(".pop-up");
-        pop_up.parentNode.removeChild(pop_up);
-    });
 
     // put above the other tab, by adding z-index
     pop_up.addEventListener("mousedown", function() {

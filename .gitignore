@@ -1,7 +1,5 @@
 .DS_Store
 README.md
-kenneth_idea/
-index.js
-css/styles.css
-js/main.js
-index.html
+css/alert.css
+js/alert.js
+alert.html
