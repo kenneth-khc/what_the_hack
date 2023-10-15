@@ -1,6 +1,7 @@
 body {
     background-color: #008080;
     background-image: url(../images/windows.jpeg);
+    margin: 0;
 }
 
 #video_box{
