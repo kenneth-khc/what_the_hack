@@ -25,17 +25,21 @@ const audio = document.getElementById("meow");
 audio.playbackRate = 1.5;
 
 input.addEventListener("keypress", function() {
+	audio.currentTime = 0;
 	audio.play();
 });
 
 input.addEventListener("keyrelease", function() {
+	audio.currentTime = 0;
 	audio.play();
 });
 
 password.addEventListener("keypress", function() {
+	audio.currentTime = 0;
 	audio.play();
 });
 
 password.addEventListener("keyrelease", function() {
+	audio.currentTime = 0;
 	audio.play();
 });
