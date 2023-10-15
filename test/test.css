@@ -1,0 +1,88 @@
+body {
+	/* background-color: black; */
+	height: 100vh;
+	width: 100vw;
+	/* display: flex;
+	justify-content: center;
+	align-items: center; */
+	overflow: hidden;
+}
+
+#container1 {
+	width: 400px;
+	height: 200px;
+}
+
+#container2 {
+	padding: 5px;
+	background-clip: content-box;
+	background: linear-gradient(#0059ed,#0812b4);
+	width: 400px;
+	height: 200px;
+	border-radius: 10px 10px 0 0;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	position: absolute;
+	z-index: 1;
+}
+
+#c2_content1 {
+    background: #f8f6e6;
+	width: 400px;
+	height: 170px;
+	display: flex;
+	justify-content: center;
+	margin: 0;
+}
+
+#x {
+	width: 120px;
+	height: 100px;
+	top: -55px;
+	position: relative;
+	z-index: 2;
+	margin: 0;
+}
+
+#message1 {
+	font: 1.1em Tahoma;
+	top: -54px;
+	left: 12px;
+	color: white;
+	border: black;
+	margin: 0;
+	position: relative;
+	z-index: 3;
+	text-shadow: 0.4px 0.4px white;
+}
+
+#container3 {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	top: 150px;
+	z-index: 4;
+}
+
+#ok {
+	background-color: #f8f6e6;
+	width: 4rem;
+	height: 1.5rem;
+}
+
+#close {
+	position: relative;
+	z-index: 4;
+	background-image: url("png-transparent-button-computer-icons-window-scalable-graphics-browse-and-close-button-s-miscellaneous-angle-text-thumbnail.png");
+	width: 30px;
+	height: 24px;
+	left: 374px;
+	top: -28px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	border-radius: 10px;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
