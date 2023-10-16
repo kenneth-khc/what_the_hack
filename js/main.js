@@ -143,3 +143,16 @@ circle.addEventListener("mousedown", function(e) {
     mousedown = true;
 
 });
+
+function hide_popup_on_click(){
+    let ok_button = document.querySelector("#ok_button")
+    let box = document.querySelector("#tos_box")
+    
+    ok_button.addEventListener("click", function(){
+        setTimeout(() => {
+            box.remove();
+        }, 500)
+    })
+}
+
+hide_popup_on_click()
