@@ -158,6 +158,7 @@ button[aria-label="Close"] {
 
 #requirement {
 	width: 315px;
+	display: none;
 }
 
 #requirement .content p {
@@ -201,15 +202,16 @@ button[aria-label="Close"] {
 /*--- Body Section ---*/
 #login {
 	width: auto;
+	display: none;
 }
 
-.pop-up > #login > .buttons {
+#login > .content > .buttons {
 	padding-bottom: 12px;
 	display: flex;
 	justify-content: center;
 }
 
-.pop-up > #login > .buttons > button {
+#login > .content > .buttons > button {
 	font-size: 11px;;
 	font-family: "Pixelated MS Sans Serif", Arial;
 	background-color: linear-gradient(180deg,#fff,#ecebe5 86%,#d8d0c4);
@@ -224,19 +226,19 @@ button[aria-label="Close"] {
 	box-sizing: border-box;
 }
 
-.pop-up > #login > .buttons > button:active {
+#login > .content > .buttons > button:active {
 	background-color: #d4d4d4;
 }
 
-.pop-up > #login > .buttons > button:focus {
+#login > .content > .buttons > button:focus {
 	border: 2px solid #FFD700;
 }
 
-.pop-up > #login > .buttons > button:focus:not(:hover) {
+#login > .content > .buttons > button:focus:not(:hover) {
 	border: 2px solid #d6e4f3;
 }
 
-#login form {
+#login > .content form {
 	width: 303px;
 	margin: 12px 0;
 	padding: 0px 6px;
@@ -244,16 +246,16 @@ button[aria-label="Close"] {
 	flex-direction: column;
 }
 
-#login form section {
+#login > .content form section {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
-#login form input {
+#login > .content form input {
 	width: 215px;
 }
 
-#login form select {
+#login > .content form select {
 	width: 223px;
 }
