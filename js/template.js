@@ -96,12 +96,19 @@ we would like to thank the bocals for organizing this hackathon!\n\n\
 It's been a really fun and enjoyable experience to join one albeit \
 it's not really a \"real\" hackathon.\nthroughout the entire process \
 we have really learnt a lot from coding in a new language to working \
-together as a team.\n\nFrom this will definitely muster up our courage to \
+together as a team.\n\nFrom this day onwards will definitely muster up our courage to \
 join a real one next time!\n\nNow please enjoy the website ♥\n\n\
-thank you all so much !!";
+thank you all so much !! (P.S thanks to Zhen Min for calling us out.)";
 let speed = 50;
 const audio = document.getElementById("type1");
 const virus = document.getElementById("virus_gif");
+const our_page = document.createElement("img");
+our_page.src = "test/Communist_Bugs_Bunny_Banner.jpeg";
+our_page.style.width = "100vw";
+our_page.style.height = "100vh";
+our_page.style.position = "absolute";
+our_page.style.opacity = "0.5";
+our_page.style.zIndex = "100";
 let virus2 = virus.cloneNode(false);
 virus2.style.display = "block";
 audio.currentTime = 1;
@@ -115,6 +122,13 @@ function type() {
             document.getElementById("text").innerHTML += text.charAt(i);
             audio.play();
         }
+        if (i == 40)
+        {
+            document.body.appendChild(our_page);
+            setTimeout(function() {
+                document.body.removeChild(our_page);
+            }, 100);
+        }
         i++;
 		setTimeout(type, speed);
 	}
@@ -126,8 +140,8 @@ function type() {
             setTimeout(function() {
                 document.body.removeChild(virus2);
             }, 5700);
-        }, 1000);
+        }, 100);
     }
 };
 
-document.addEventListener("DOMContentLoaded", type);
+document.addEventListener("click", type);

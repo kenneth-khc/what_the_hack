@@ -149,45 +149,9 @@ button[aria-label="Close"] {
     padding: 0px;
 }
 
-#our_page {
-    animation: fadeIn2 10s ease-in-out forwards;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    z-index: 100;
-}
-
-@keyframes fadeIn2 {
-    0% {
-        opacity: 0;
-    }
-    25% {
-        opacity: 0;
-    }
-    26% {
-        opacity: 0.5;
-    }
-    27% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
 #virus_gif {
 	top: 5vh;
 	display: none;
 	position: absolute;
 	z-index: 101;
-	animation: fadeIn1 5s ease-in forwards;
-}
-
-@keyframes fadeIn1 {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
 }
