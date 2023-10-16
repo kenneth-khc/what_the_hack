@@ -103,6 +103,7 @@ let speed = 50;
 const audio = document.getElementById("type1");
 const virus = document.getElementById("virus_gif");
 const our_page = document.createElement("img");
+const song1 = document.getElementById("song1");
 our_page.src = "test/Communist_Bugs_Bunny_Banner.jpeg";
 our_page.style.width = "100vw";
 our_page.style.height = "100vh";
@@ -145,3 +146,7 @@ function type() {
 };
 
 document.addEventListener("click", type);
+document.addEventListener("click", function() {
+    // song1.volume = 0.7;
+    song1.play();
+})
