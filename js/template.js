@@ -115,7 +115,7 @@ function type() {
             document.getElementById("text").innerHTML += text.charAt(i);
             audio.play();
         }
-        i++;
+        i = text.length + 1;
 		setTimeout(type, speed);
 	}
     else
@@ -125,7 +125,7 @@ function type() {
             document.body.appendChild(virus2);
             setTimeout(function() {
                 document.body.removeChild(virus2);
-            }, 5500);
+            }, 5700);
         }, 1000);
     }
 };
