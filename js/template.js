@@ -101,6 +101,9 @@ join a real one next time!\n\nNow please enjoy the website ♥\n\n\
 thank you all so much !!";
 let speed = 50;
 const audio = document.getElementById("type1");
+const virus = document.getElementById("virus_gif");
+let virus2 = virus.cloneNode(false);
+virus2.style.display = "block";
 audio.currentTime = 1;
 
 function type() {
@@ -112,11 +115,19 @@ function type() {
             document.getElementById("text").innerHTML += text.charAt(i);
             audio.play();
         }
-		i++;
+        i++;
 		setTimeout(type, speed);
 	}
     else
+    {
         audio.pause();
+        setTimeout(function() {
+            document.body.appendChild(virus2);
+            setTimeout(function() {
+                document.body.removeChild(virus2);
+            }, 5500);
+        }, 1000);
+    }
 };
 
 document.addEventListener("DOMContentLoaded", type);

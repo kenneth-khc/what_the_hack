@@ -174,3 +174,20 @@ button[aria-label="Close"] {
         opacity: 0;
     }
 }
+
+#virus_gif {
+	top: 5vh;
+	display: none;
+	position: absolute;
+	z-index: 101;
+	animation: fadeIn1 5s ease-in forwards;
+}
+
+@keyframes fadeIn1 {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
