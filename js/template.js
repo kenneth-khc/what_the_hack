@@ -115,7 +115,7 @@ function type() {
             document.getElementById("text").innerHTML += text.charAt(i);
             audio.play();
         }
-        i = text.length + 1;
+        i++;
 		setTimeout(type, speed);
 	}
     else
