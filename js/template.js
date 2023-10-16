@@ -85,8 +85,6 @@ function features(pop_up) {
         pop_up.style.zIndex = zIndexCounter;
         zIndexCounter++;
     });
-    // To do password functionality
-    login_func();
 }
 
 pop_ups.forEach(function(pop_up) {
@@ -263,19 +261,13 @@ function login_func() {
                 return "weak password"
         }
     }
-    
-    var password = document.querySelector("#password");
-    var requirement = document.querySelector("#requirement");
-    password.addEventListener("input", function(e) {
-        // var dynamic_paragraph = document.querySelector("#requirement > .content > ul > li");
-        // if (dynamic_paragraph)
-        //     dynamic_paragraph.remove();
+
+    document.addEventListener("input", function(e) {
+        console.log(e.target);
         var input = e.target.value;
         var paragraph = document.createElement('li');
         paragraph.textContent = checkPassReq(input);
         document.querySelector("#requirement > .content > ul").appendChild(paragraph);
-
-        // Scroll for
         var scrollableDiv = document.querySelector("#requirement .content");
         scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
     })
