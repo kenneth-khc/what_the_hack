@@ -5,13 +5,13 @@
     <link rel="stylesheet" type="text/css" href="css/security.css">
 </head>
 <body>
-    <div id="message">
-        <pre id="blather">Do not restart or use your computer.
-Your computer is disabled. Please call me.
-Access is the block security reason for this computer.
-Please contact us immediately.
-I will help you solve this problem.
-        </pre>
+    <!-- <div id="message">
+    </div> -->
+    <div id="update">
+        <p class="update_message">Working on updates</p>
+        <p class="update_message" id="completion_message">0% complete</p>
+        <p class="update_message">Don't turn off your PC. This will take a while.</p>
+        <p class="update_message">Your PC will restart several times.</p>
     </div>
     <div id="virus_scan">
         <div id="nav_bar">
@@ -61,7 +61,7 @@ I will help you solve this problem.
             <span id="fakenews">Threat detected: Trojan Spyware</span>
             <img id="warning" src="images/warning.png" height="100px">
             <span id="threat">Access to this PC has been blocked for security reasons.</span>
-            <a href="">
+            <a id="contact_button">
                 <span id="contact">Contact Windows Support: +146 257 3890 (Security Helpline)</span>
             </a>
         </div>

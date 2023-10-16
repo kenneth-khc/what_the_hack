@@ -4,12 +4,6 @@ const delay = 29000;
 function show_popup() {
     const popup = document.getElementById("popup")
     popup.style.visibility = "visible"
-    setTimeout(show_message, 5000)
-}
-
-function show_message() {
-    const message = document.getElementById("message")
-    message.style.visibility = "visible"
 }
 
 let seconds = 0
@@ -49,3 +43,22 @@ setInterval(update_random_numbers, 1000)
 setInterval(update_seconds, 1000)
 setInterval(update_threats, 1000)
 setTimeout(show_popup, delay)
+
+let contact = document.querySelector("#contact_button")
+
+console.log(contact)
+
+contact.addEventListener("click", full_screen)
+
+function full_screen(){
+    let window = document.documentElement;
+    let update = document.querySelector("#update")
+    let virus_scan = document.querySelector("#virus_scan")
+    let popup = document.querySelector("#popup")
+    virus_scan.style.visibility = "hidden"
+    popup.style.visibility = "hidden"
+    setTimeout(() => {
+        update.style.visibility = "visible"
+        window.requestFullscreen()
+    }, 3000)
+}
