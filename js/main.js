@@ -1,3 +1,5 @@
+var mousedown = false;
+
 document.addEventListener('DOMContentLoaded', function() {
     var bg_song = document.getElementById('bg-song');
 
@@ -8,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var bg_flag = false;
     function openNewTab() {
-        window.open("alert.html", "_blank"); // CHANGE THE LOCATION FOR THE NEXT PAGE
+        // window.open("alert.html", "_blank"); // CHANGE THE LOCATION FOR THE NEXT PAGE
         if (bg_flag == false) {
             var body_style = document.body.style;
             body_style.backgroundImage = "url('gifs/crazy-cat-cat-crazy.gif')"
@@ -41,7 +43,46 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Use the function to change color
         changeColorSmoothly();
-        circle.style.backgroundColor = getRandomColor();
+        // Calculate the inverse color (complementary color) with transparency for the box shadow
+        var alpha = (Math.random() * (0.1 - 0.5) + 0.5).toFixed(2); // Random alpha between 0.1 and 0.5
+        var inverseColor = 'rgba(' +
+        (255 - parseInt(circle.style.backgroundColor.slice(5, 8))) + ',' +
+        (255 - parseInt(circle.style.backgroundColor.slice(10, 13))) + ',' +
+        (255 - parseInt(circle.style.backgroundColor.slice(15, 18))) + ',' + '0.8)';
+        circle.style.boxShadow = '0 0 0 9999px ' + inverseColor;
+
+
+
+        // Change shape after clicking the dog div
+        function changeProperties() {
+            var randomRadiusTopLeft = Math.floor(Math.random() * 101); // Random value between 0 and 100
+            var randomRadiusTopRight = Math.floor(Math.random() * 101); // Random value between 0 and 100
+            var randomRadiusBottomRight = Math.floor(Math.random() * 101); // Random value between 0 and 100
+            var randomRadiusBottomLeft = Math.floor(Math.random() * 101); // Random value between 0 and 100
+        
+            var randomSize = Math.floor(Math.random() * 201) + 100; // Random value between 100 and 300
+        
+            var circleElement = document.querySelector('.circle');
+        
+            // Apply random border radii and size with transition
+            circleElement.style.transition = 'all 0.5s ease';
+            circleElement.style.borderRadius = randomRadiusTopLeft + '% ' + randomRadiusTopRight + '% ' + randomRadiusBottomRight + '% ' + randomRadiusBottomLeft + '%';
+            circleElement.style.width = randomSize + 'px';
+            circleElement.style.height = randomSize + 'px';
+        }
+        
+        // Call the function to change properties
+        if (mousedown == false)
+            changeProperties();
+        
+        
+
+
+
+
+
+
+
     }
     bg_song.addEventListener("timeupdate", function() {
         if (bg_song.currentTime >= 9) { // Open new tab at 30 seconds
@@ -60,7 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     function bounce() {
         if (iterationCount % 2 == 0) {
-            console.log(iterationCount)
             image.style.setProperty('--random-height', getRandomHeight());
             if (iterationCount % 4 == 0) {
                 image.style.setProperty('--random-x', Math.floor(Math.random() * 2) * 2 - 1);
@@ -94,9 +134,12 @@ circle.addEventListener("mousedown", function(e) {
         document.removeEventListener('mousemove', onMouseMove);
         document.removeEventListener('mouseup', onMouseUp);
         circle.style.cursor = "grab";
+        mousedown = false;
     }
 
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
+
+    mousedown = true;
 
 });
