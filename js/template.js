@@ -119,6 +119,7 @@ virus2.style.borderRadius = "10px 10px 0 0";
 audio.currentTime = 1;
 var flag = 0;
 var flag2 = 0;
+var flag3 = 0;
 const login = document.getElementById("login");
 const requirement = document.getElementById("requirement");
 
@@ -150,25 +151,26 @@ function type() {
             setTimeout(function() {
                 document.body.removeChild(virus2);
                 flag = 0;
+                flag2++;
+                if (i >= text.length && flag2 > 0 && flag3 == 0)
+                {
+                    flag3 = 1;
+                    let bodyWidth = document.body.clientWidth;
+                    let bodyHeight = document.body.clientHeight;
+                    let randomTop = Math.floor(Math.random() * (bodyHeight - 100));
+                    let randomLeft = Math.floor(Math.random() * (bodyWidth - 100));
+                    login.style.top = randomTop + "px";
+                    login.style.left = randomLeft + "px";
+                    randomTop = Math.floor(Math.random() * (bodyHeight - 100));
+                    randomLeft = Math.floor(Math.random() * (bodyWidth - 100));
+                    requirement.style.top = randomTop + "px";
+                    requirement.style.left = randomLeft + "px";
+                    setTimeout(function() {
+                        login.style.display = "initial";
+                        requirement.style.display = "initial";
+                    }, 100);
+                }
             }, 5650);
-        }, 100);
-    }
-    if (i >= text.length && flag2 == 0)
-    {
-        flag2 = 1;
-        let bodyWidth = document.body.clientWidth;
-        let bodyHeight = document.body.clientHeight;
-        let randomTop = Math.floor(Math.random() * (bodyHeight - 100));
-        let randomLeft = Math.floor(Math.random() * (bodyWidth - 100));
-        login.style.top = randomTop + "px";
-        login.style.left = randomLeft + "px";
-        randomTop = Math.floor(Math.random() * (bodyHeight - 100));
-        randomLeft = Math.floor(Math.random() * (bodyWidth - 100));
-        requirement.style.top = randomTop + "px";
-        requirement.style.left = randomLeft + "px";
-        setTimeout(function() {
-            login.style.display = "initial";
-            requirement.style.display = "initial";
         }, 100);
     }
 };
@@ -177,7 +179,6 @@ document.addEventListener("click", type);
 document.addEventListener("click", function() {
     song1.play();
 });
-
 
 function login_func() {
     function hasNumbers(input) {
@@ -244,23 +245,16 @@ function login_func() {
     {
         switch (true)
         {
-            case input.length < 10:
+            case input.length < 3:
                 return "password must be " + (input.length + 1) + " characters long";
             case !hasNumbers(input):
                 return "password must have a number";
             case !hasSymbols(input):
                 return "password must have a symbol";
-            case countSymbols(input) < 5:
-                var symbol_count = countSymbols(input);
-                return "password must have " + (symbol_count + 1) + " symbols";
             case hasAdjacentDuplicates(input):
                 return "remove the adjacent identical characters"
-            case !hasTextBasedEmojis(input):
-                return "password must have a text based emoji";
             case !hasMalaysia(input):
                     return "password must include Malaysia"
-            case !hasKL(input):
-                return "password must include Kuala_Lumpur"
             case !has42kl(input):
                 return "password must include 42kl"
             case sumDigitsInString(input) < 42:
