@@ -1,0 +1,227 @@
+body {
+    background-color: #008080;
+    background-image: url(../images/windows.jpeg);
+    margin: 0;
+}
+
+#video_box{
+    position: fixed;
+    top: 100px;
+    z-index: 999;
+}
+
+video {
+    height: 300px;
+}
+
+#left_bar{
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width:150px;
+    height: 10000px;
+    z-index: 998;
+    background: #C0C0C0;
+    padding: 5px;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 3px 4px rgba(12,12,12,0.2);
+    border: 5px #828182;
+    border-style: inset;
+}
+
+@keyframes bold_and_unbold {
+    0% {
+        font-weight: bolder;
+    }
+    50% {
+        font-weight: normal;
+    }
+    100% {
+        font-weight: bolder;
+    }
+}
+
+#left_bar pre, #right_bar pre {
+    font-family: "dancing-dead";
+    text-align: center;
+    font-size: 70px;
+    animation: bold_and_unbold 0.1s linear infinite;
+}
+
+#right_bar {
+    position: fixed;
+    right: 0;
+    width:150px;
+    height: 10000px;
+    z-index: 998;
+    background: #C0C0C0;
+    padding: 5px;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 3px 4px rgba(12,12,12,0.2);
+    border: 5px #828182;
+    border-style: inset;
+}
+
+#window {
+    background: #C0C0C0;
+    position: absolute;
+    width: 80vw;
+    /* height: 50vh; */
+    height: 2000px;
+    margin: 0% 10% 10% 10%;
+    padding: 5px;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 3px 4px rgba(12,12,12,0.2);
+    border: 5px #828182;
+    border-style: inset;
+}
+
+.nav_bar {
+    color: white;
+    background: linear-gradient(to right, #01007B, #0A6EBC );
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+
+.nav_bar p {
+    margin: 0 auto 0 0;
+    font-weight: bold;
+    font-size: 22px;
+}
+.symbol {
+    background-color: #C0C0C0;
+    border-style: inset;
+    border: 1px 1px #C0C0C0;
+    width: 16px;
+    text-align: center;
+    color: #030303;
+}
+
+#motorcycles {
+    position: relative;
+    height: 300px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#motorcycle {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+}
+
+#motorcycle2 {
+    position: absolute;
+    text-align: right;
+    width: 100%;
+    height: 50%;
+}
+
+@keyframes spin{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spin_gif {
+    animation: spin 3s ease-out infinite;
+}
+
+@keyframes flip{
+    0%, 100%{
+        transform: scaleX(-1);
+    }
+    50% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes flip2{
+    0%, 100%{
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(-1);
+    }
+}
+
+.flip_gif {
+    animation: flip 3s linear infinite;
+}
+
+.flip_text {
+    animation: flip2 3s linear infinite;
+}
+
+@font-face {
+    font-family: "tango-macabre";
+    src: url(../fonts/TangoMacabre.ttf) format("truetype");
+}
+
+figure {
+    text-align: center;
+}
+figcaption{
+    font-family: "tango-macabre";
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+figcaption + p {
+    animation: bold_and_unbold 0.2s ease infinite;
+}
+#OK {
+    text-align: center;
+    margin: 50px -5px 0px -5px;
+}
+
+@keyframes move{
+    0% {
+        transform: translate(100);
+    }
+}
+#OK input {
+    font-family: "tango-macabre";
+    font-size: 150px;
+    width: 100%;
+}
+
+#dances {
+    display: flex;
+    align-items:center;
+    flex-wrap: wrap;
+}
+
+#copypasta {
+    margin-left: 40%;
+    margin-right: 40%;
+    text-align: center;
+}
+
+hr {
+    height: 40px;
+    background: linear-gradient(to top, #333, #333 50%, #eee 75%, #333 75%);
+    margin-bottom: 100px;
+}
+
+@font-face {
+    font-family: "dancing-dead";
+    src: url(../fonts/dancingdead.ttf) format("truetype");
+}
+
+#line {
+    font-family: "dancing-dead";
+    font-size: 5vw;
+    text-align: center;
+    margin: 100px 0 0 0;
+    letter-spacing: 15px;
+}

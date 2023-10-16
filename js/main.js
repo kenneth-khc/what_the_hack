@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var bg_flag = false;
     function openNewTab() {
-        // window.open("alert.html", "_blank"); // CHANGE THE LOCATION FOR THE NEXT PAGE
+        // window.open("template.html", "_blank"); // CHANGE THE LOCATION FOR THE NEXT PAGE
         if (bg_flag == false) {
             var body_style = document.body.style;
             body_style.backgroundImage = "url('gifs/crazy-cat-cat-crazy.gif')"

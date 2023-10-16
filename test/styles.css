@@ -1,0 +1,130 @@
+body {
+    background: #008080;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#pop-up {
+    width: 80vw;
+    height: 50vh;
+    background: #C0C0C0;
+    margin: 0px auto;
+    padding: 5px;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 3px 4px rgba(12,12,12,0.2);
+    border: 5px #828182;
+    border-style: inset;
+    position: absolute;
+    z-index: 2;
+}
+
+#banner {
+    color: white;
+    background: #020080;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+
+#banner p {
+    margin: 0 auto 0 0;
+}
+
+.symbol {
+    background-color: #C0C0C0;
+    border-style: inset;
+    border: 1px 1px #C0C0C0;
+    width: 16px;
+    text-align: center;
+    color: #030303;
+}
+
+#q_symbol {
+    margin-right: 5px;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+form > input {
+    display: block;
+}
+
+#timer {
+    font-size: 100vh;
+    position: relative;
+    margin: 0;
+    z-index: 1;
+    line-height: 1.0;
+    animation: fadeIn 3s linear;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#text_container {
+    width: 1000px;
+    height: 1000px;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    z-index: 99;
+}
+
+@font-face {
+    font-family: W95A;
+    src: url(https://fonts.cdnfonts.com/s/45697/W95FA.woff);
+}
+
+#text_content {
+    top: 0px;
+    left: 0px;
+    position: relative;
+    font-family: W95A, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    margin: 10px;
+    padding: 0px;
+}
+
+#our_page {
+    animation: fadeIn2 10s ease-in-out forwards;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 100;
+}
+
+@keyframes fadeIn2 {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    26% {
+        opacity: 0.5;
+    }
+    27% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
