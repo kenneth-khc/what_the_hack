@@ -66,6 +66,7 @@ function features(pop_up) {
             original_div.style.position = "absolute";
             original_div.style.top = randomTop + "px";
             original_div.style.left = randomLeft + "px";
+            original_div.style.display = "initial";
 
             document.body.insertBefore(original_div, pop_up);
             features(original_div);
@@ -112,12 +113,17 @@ our_page.style.opacity = "0.5";
 our_page.style.zIndex = "100";
 let virus2 = virus.cloneNode(false);
 virus2.style.display = "block";
+virus2.style.borderRadius = "10px 10px 0 0";
 audio.currentTime = 1;
+var flag = 0;
+var flag2 = 0;
+const login = document.getElementById("login");
+const requirement = document.getElementById("requirement");
 
 function type() {
     if (i < text.length) {
-		if (text.charAt(i) == '\n') {
-			document.getElementById("text").innerHTML += "<br>";
+        if (text.charAt(i) == '\n') {
+            document.getElementById("text").innerHTML += "<br>";
         }
 		else {
             document.getElementById("text").innerHTML += text.charAt(i);
@@ -133,20 +139,38 @@ function type() {
         i++;
 		setTimeout(type, speed);
 	}
-    else
+    else if (flag == 0)
     {
         audio.pause();
+        flag = 1;
         setTimeout(function() {
             document.body.appendChild(virus2);
             setTimeout(function() {
                 document.body.removeChild(virus2);
-            }, 5700);
+                flag = 0;
+            }, 5650);
         }, 100);
+    }
+    if (i >= text.length && flag2 == 0)
+    {
+        flag2 = 1;
+        let bodyWidth = document.body.clientWidth;
+        let bodyHeight = document.body.clientHeight;
+        let randomTop = Math.floor(Math.random() * (bodyHeight - 100));
+        let randomLeft = Math.floor(Math.random() * (bodyWidth - 100));
+        login.style.top = randomTop + "px";
+        login.style.left = randomLeft + "px";
+        login.style.display = "initial";
+        randomTop = Math.floor(Math.random() * (bodyHeight - 100));
+        randomLeft = Math.floor(Math.random() * (bodyWidth - 100));
+        requirement.style.top = randomTop + "px";
+        requirement.style.left = randomLeft + "px";
+        requirement.style.display = "initial";
     }
 };
 
+
 document.addEventListener("click", type);
 document.addEventListener("click", function() {
-    // song1.volume = 0.7;
     song1.play();
 })
