@@ -47,7 +47,7 @@ function randomize() {
 
 	image.addEventListener("mouseenter", function() {
 		image.style.transition = "transform 0.5s";
-		image.style.transform = "scale(1.1)";
+		image.style.transform = "scale(1.5)";
 	});
 
 	image.addEventListener("mouseleave", function() {
@@ -60,7 +60,9 @@ function randomize() {
 
 setInterval(function() {
 	if (popup.style.display != "flex")
-		alert("Congratulations you just won an iphone15.!\n\
-Please proceed here to claim your reward:\n\
-https://shorturl.at/qDG36");
+	{
+		if (window.confirm('Congratulations you just won an iphone15.!\n\
+Please proceed here to claim your reward:\nhttps://shorturl.at/qDG36'))
+			window.location.href='https://www.youtube.com/watch?v=xvFZjo5PgG0';
+	}
 }, 5000);

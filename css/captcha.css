@@ -72,11 +72,12 @@ body {
     box-shadow: 1px 2px 3px 4px rgba(12,12,12,0.2);
     border: 5px #828182;
     border-style: inset;
+    z-index: 1;
 }
 
 .images img {
-    width: 600px;
-    height: 275px;
+    width: 25vw;
+    height: 23vh;
     padding: 15px;
     transition: transform 0.5s;
 }
@@ -126,25 +127,25 @@ body {
 }
 
 #moving_cat {
-    width: 150px;
-    height: 100px;
+    width: 10vw;
+    height: 10vh;
     animation: around 60s linear infinite;
 }
 
 @keyframes around {
     0% {
-        transform: translate(5vw);
+        transform: translate(2vw);
     }
     25% {
-        transform: translate(90vw);
+        transform: translate(85vw);
     }
     50% {
-        transform: translate(90vw, 90vh);
+        transform: translate(85vw, 85vh);
     }
     75% {
-        transform: translate(5vw, 90vh);
+        transform: translate(2vw, 85vh);
     }
     100% {
-        transform: translate(5vw, 0);
+        transform: translate(2vw, 0);
     }
 }
