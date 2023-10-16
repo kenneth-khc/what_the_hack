@@ -1,6 +1,7 @@
 // Drag the pop-up tab, when click on the header
 var pop_ups = document.querySelectorAll(".pop-up");
 var zIndexCounter = 1;
+const abc = document.getElementById("type1");
 
 function onMouseDown(e)
 {
@@ -89,3 +90,33 @@ pop_ups.forEach(function(pop_up) {
     features(pop_up);
 })
 
+let i = 0;
+let text = "oh hi there !!\n\nthank you and welcome to our page ♥\n\n\
+we would like to thank the bocals for organizing this hackathon!\n\n\
+It's been a really fun and enjoyable experience to join one albeit \
+it's not really a \"real\" hackathon.\nthroughout the entire process \
+we have really learnt a lot from coding in a new language to working \
+together as a team.\n\nFrom this will definitely muster up our courage to \
+join a real one next time!\n\nNow please enjoy the website ♥\n\n\
+thank you all so much !!";
+let speed = 50;
+const audio = document.getElementById("type1");
+audio.currentTime = 1;
+
+function type() {
+    if (i < text.length) {
+		if (text.charAt(i) == '\n') {
+			document.getElementById("text").innerHTML += "<br>";
+        }
+		else {
+            document.getElementById("text").innerHTML += text.charAt(i);
+            audio.play();
+        }
+		i++;
+		setTimeout(type, speed);
+	}
+    else
+        audio.pause();
+};
+
+document.addEventListener("DOMContentLoaded", type);

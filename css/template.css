@@ -14,7 +14,7 @@ body {
 
 .pop-up {
 	background: linear-gradient(180deg,#0997ff,#0053ee 8%,#0050ee 40%,#06f 88%,#06f 93%,#005bff 95%,#003dd7 96%,#003dd7);
-	width: 400px;
+	width: 750px;
 	padding: 0px 5px 3px 3px;
 	border-top: 1px solid #0831d9;
 	border-right: 1px solid #001ea0;
@@ -131,4 +131,46 @@ button[aria-label="Close"] {
     padding: 12px 8px;
     box-shadow: inset 0 1px 2px grey;
     overflow: scroll;
+}
+
+@font-face {
+    font-family: W95A;
+    src: url(https://fonts.cdnfonts.com/s/45697/W95FA.woff);
+}
+
+#text {
+	top: 0px;
+    left: 0px;
+    position: relative;
+    font-family: W95A, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    margin: 10px;
+    padding: 0px;
+}
+
+#our_page {
+    animation: fadeIn2 10s ease-in-out forwards;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 100;
+}
+
+@keyframes fadeIn2 {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    26% {
+        opacity: 0.5;
+    }
+    27% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 }
