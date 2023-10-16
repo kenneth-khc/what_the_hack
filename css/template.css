@@ -158,7 +158,12 @@ button[aria-label="Close"] {
 
 #requirement {
 	width: 315px;
-	display: none;
+	/* display: none; */
+}
+
+#requirement .content {
+	max-height: 50vh;
+	overflow: scroll;
 }
 
 #requirement .content p {
@@ -202,7 +207,7 @@ button[aria-label="Close"] {
 /*--- Body Section ---*/
 #login {
 	width: auto;
-	display: none;
+	/* display: none; */
 }
 
 #login > .content > .buttons {
