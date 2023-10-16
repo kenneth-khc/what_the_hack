@@ -1,12 +1,18 @@
 var mousedown = false;
 
-document.addEventListener('DOMContentLoaded', function() {
-    var bg_song = document.getElementById('bg-song');
+let ok_button = document.querySelector("#ok_button")
+let box = document.querySelector("#tos_box")
 
-    // Wait for user interaction (e.g., click) to play the audio
-    document.addEventListener('click', function() {
-        bg_song.play();
-    });
+ok_button.addEventListener("click", function(){
+    start_jamming()
+    setTimeout(() => {
+        box.remove()
+    }, 500)
+})
+
+function start_jamming(){
+    var bg_song = document.getElementById('bg-song');
+    bg_song.play()
 
     var bg_flag = false;
     function openNewTab() {
@@ -22,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Change circle color
         var circle = document.querySelector('.circle');
         function getRandomColor() {
-            var letters = '0123456789ABCDEF';
             var color = 'rgba(';
             for (var i = 0; i < 3; i++) {
                 color += Math.floor(Math.random() * 256) + ',';
@@ -44,11 +49,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Use the function to change color
         changeColorSmoothly();
         // Calculate the inverse color (complementary color) with transparency for the box shadow
-        var alpha = (Math.random() * (0.1 - 0.5) + 0.5).toFixed(2); // Random alpha between 0.1 and 0.5
+        // var alpha = (Math.random() * (0.1 - 0.5) + 0.5).toFixed(2); // Random alpha between 0.1 and 0.5
         var inverseColor = 'rgba(' +
         (255 - parseInt(circle.style.backgroundColor.slice(5, 8))) + ',' +
         (255 - parseInt(circle.style.backgroundColor.slice(10, 13))) + ',' +
-        (255 - parseInt(circle.style.backgroundColor.slice(15, 18))) + ',' + '0.8)';
+        (255 - parseInt(circle.style.backgroundColor.slice(15, 18))) + ',' + 0.7;
         circle.style.boxShadow = '0 0 0 9999px ' + inverseColor;
 
 
@@ -76,9 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
             changeProperties();
         
         
-
-
-
 
 
 
@@ -113,46 +115,34 @@ document.addEventListener('DOMContentLoaded', function() {
         bounce(); // Call bounce when transition ends
     });
     bounce(); // Start the animation
-});
-
-var circle = document.querySelector('.circle');
-
-circle.addEventListener("mousedown", function(e) {
-    circle.style.cursor = "grabbing";
-    var offsetX = e.pageX - circle.offsetLeft;
-    var offsetY = e.pageY - circle.offsetTop;
-
-    function onMouseMove(e) {
-        var x = e.pageX;
-        var y = e.pageY;
-
-        circle.style.left = (x - offsetX) + "px";
-        circle.style.top = (y - offsetY) + "px";
-    }
-
-    function onMouseUp() {
-        document.removeEventListener('mousemove', onMouseMove);
-        document.removeEventListener('mouseup', onMouseUp);
-        circle.style.cursor = "grab";
-        mousedown = false;
-    }
-
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseup', onMouseUp);
-
-    mousedown = true;
-
-});
-
-function hide_popup_on_click(){
-    let ok_button = document.querySelector("#ok_button")
-    let box = document.querySelector("#tos_box")
-    
-    ok_button.addEventListener("click", function(){
-        setTimeout(() => {
-            box.remove();
-        }, 500)
-    })
 }
 
-hide_popup_on_click()
+let circle = document.querySelector(".fake_circle")
+circle.addEventListener("mouseenter", start_dragging)
+window.addEventListener("mousemove", move_cute_dog)
+
+let dragging = false
+let offsetX, offsetY
+let multiplier = 1
+function start_dragging(event)
+{
+    dragging = true;
+    document.body.style.cursor = "none";
+    offsetX = (event.pageX - circle.offsetLeft)
+    offsetY = (event.pageY - circle.offsetTop)
+}
+
+function move_cute_dog(event)
+{
+    if (dragging)
+    {
+        let x = event.pageX - offsetX
+        let y = event.pageY - offsetY
+
+        x *= multiplier
+        y *= multiplier
+        circle.style.left = (x) + "px"
+        circle.style.top = (y) + "px"
+        circle.style.cursor = "none"
+    }
+}
