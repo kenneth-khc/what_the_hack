@@ -1,13 +1,7 @@
 var mousedown = false;
+var bg_song = document.getElementById('bg-song');
 
 document.addEventListener('DOMContentLoaded', function() {
-    var bg_song = document.getElementById('bg-song');
-
-    // Wait for user interaction (e.g., click) to play the audio
-    document.addEventListener('click', function() {
-        bg_song.play();
-    });
-
     var bg_flag = false;
     function openNewTab() {
         // window.open("template.html", "_blank"); // CHANGE THE LOCATION FOR THE NEXT PAGE
@@ -143,3 +137,14 @@ circle.addEventListener("mousedown", function(e) {
     mousedown = true;
 
 });
+
+let ok_button = document.querySelector("#ok_button")
+let box = document.querySelector("#tos_box")
+
+ok_button.addEventListener("click", function()
+{
+    setTimeout(() => {
+        box.remove()
+        bg_song.play()
+    }, 500)
+})
