@@ -1,7 +1,7 @@
 // Drag the pop-up tab, when click on the header
 var pop_ups = document.querySelectorAll(".pop-up");
 var zIndexCounter = 1;
-const abc = document.getElementById("type1");
+let trigger_question_mark = 0;
 
 function onMouseDown(e)
 {
@@ -116,9 +116,12 @@ function features(pop_up) {
         if (target.getAttribute("aria-label") == "Help") {
             // var new_window = window.open("welcome.html", "_blank");
             // if (!new_window) {}
-            setTimeout(function () {
-                window.location.href = "welcome.html"
-            }, 750);
+            if (trigger_question_mark == 1)
+            {
+                setTimeout(function () {
+                    window.location.href = "welcome.html"
+                }, 750);
+            }
         }
         if (target.classList.contains("idk"))
         {
@@ -195,6 +198,7 @@ function type() {
     else if (flag == 0)
     {
         audio.pause();
+        trigger_question_mark = 1;
         flag = 1;
         setTimeout(function() {
             document.body.appendChild(virus2);
