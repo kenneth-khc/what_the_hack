@@ -78,6 +78,14 @@ function features(pop_up) {
             }
             toggleAudio();
         }
+        if (target.getAttribute("aria-label") == "Help") {
+            console.log("a")
+            // var new_window = window.open("welcome.html", "_blank");
+            // if (!new_window) {}
+            setTimeout(function () {
+                window.location.href = "welcome.html"
+            }, 500);
+        }
     });
 
     // put above the other tab, by adding z-index

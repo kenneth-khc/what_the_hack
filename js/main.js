@@ -4,7 +4,16 @@ var bg_song = document.getElementById('bg-song');
 document.addEventListener('DOMContentLoaded', function() {
     var bg_flag = false;
     function openNewTab() {
-        // window.open("template.html", "_blank"); // CHANGE THE LOCATION FOR THE NEXT PAGE
+        // var new_window = window.open("template.html", "_blank"); // CHANGE THE LOCATION FOR THE NEXT PAGE
+        // if (!new_window) {}
+        var circle = document.querySelector('.circle');
+        setTimeout(function () {
+            circle.addEventListener("click", function (){
+                window.location.href = "template.html";
+            })
+        }, 500);
+     
+
         if (bg_flag == false) {
             var body_style = document.body.style;
             body_style.backgroundImage = "url('gifs/crazy-cat-cat-crazy.gif')"
@@ -79,8 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
     bg_song.addEventListener("timeupdate", function() {
-        if (bg_song.currentTime >= 9) { // Open new tab at 30 seconds
-            setInterval(openNewTab, 1000); // Opens a new tab every 5 seconds
+        if (bg_song.currentTime >= 4) { // Open new tab at ? seconds
+            setInterval(openNewTab, 6000); // Opens a new tab every ? seconds
             bg_song.removeEventListener("timeupdate", arguments.callee); // Remove the event listener after opening the tab
         }
     })
