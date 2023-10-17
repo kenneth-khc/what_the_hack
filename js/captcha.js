@@ -27,6 +27,7 @@ function randomize() {
 	image.style.width = "10px";
 	image.style.height = "10px";
 	image.style.position = "absolute";
+	image.style.zIndex = "1000";
 
 	const containerWidth = container.clientWidth;
 	const containerHeight = container.clientHeight;
@@ -36,6 +37,7 @@ function randomize() {
 	image.style.left = randomLeft + "px";
 	
 	image.addEventListener("click", function() {
+		grrr.remove();
 		cat_audio.currentTime = 0;
 		cat_audio.volume = 0.5;
 		cat_audio.play();
@@ -66,3 +68,34 @@ Please proceed here to claim your reward:\nhttps://shorturl.at/qDG36'))
 			window.location.href='https://www.youtube.com/watch?v=xvFZjo5PgG0';
 	}
 }, 5000);
+
+let text = "VERIFY U A CAT OR ELSE!!!111"
+let i = 0;
+let speed = 50;
+let catGun = document.createElement("img");
+const grrr = document.getElementById("grrr");
+grrr.loop = true;
+catGun.src = "images/Untitled.png"
+catGun.style.position = "absolute";
+catGun.style.zIndex = "101";
+
+function type() {
+    if (i < text.length) {
+		document.getElementById("VERIFICATION").innerHTML += text.charAt(i);
+        i++;
+		setTimeout(type, speed);
+	}
+	else
+	{
+		document.getElementById("VERIFICATION").appendChild(catGun);
+		setTimeout(function() {
+			document.body.removeChild(document.getElementById("VERIFICATION"));
+		}, 2500);
+	}
+}
+
+setTimeout(type, 0);
+
+document.addEventListener("click", function() {
+	grrr.play();
+});

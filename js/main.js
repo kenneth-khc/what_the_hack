@@ -164,10 +164,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 let ok_button = document.querySelector("#ok_button")
 let box = document.querySelector("#tos_box")
+const nyancat = document.getElementById("nyancat")
+
+document.addEventListener("click", function() {
+    nyancat.play();
+});
 
 ok_button.addEventListener("click", function()
 {
     setTimeout(() => {
+        nyancat.pause();
         box.remove()
         bg_song.play()
     }, 500)

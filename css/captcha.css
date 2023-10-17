@@ -149,3 +149,11 @@ body {
         transform: translate(2vw, 0);
     }
 }
+
+#VERIFICATION {
+    position: absolute;
+    z-index: 100;
+    animation: flash 0.5s linear infinite;
+    font-size: 100px;
+    top: 30vh;
+}
