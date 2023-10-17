@@ -173,7 +173,7 @@ document.addEventListener("click", function() {
 ok_button.addEventListener("click", function()
 {
     setTimeout(() => {
-        nyancat.pause();
+        nyancat.remove();
         box.remove()
         bg_song.play()
     }, 500)
