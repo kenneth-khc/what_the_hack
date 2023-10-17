@@ -118,34 +118,34 @@ document.addEventListener('DOMContentLoaded', function() {
     bounce(); // Start the animation
 });
 
-var circle = document.querySelector('.circle');
+// var circle = document.querySelector('.circle');
 
-circle.addEventListener("mousedown", function(e) {
-    circle.style.cursor = "grabbing";
-    var offsetX = e.pageX - circle.offsetLeft;
-    var offsetY = e.pageY - circle.offsetTop;
+// circle.addEventListener("mousedown", function(e) {
+//     circle.style.cursor = "grabbing";
+//     var offsetX = e.pageX - circle.offsetLeft;
+//     var offsetY = e.pageY - circle.offsetTop;
 
-    function onMouseMove(e) {
-        var x = e.pageX;
-        var y = e.pageY;
+//     function onMouseMove(e) {
+//         var x = e.pageX;
+//         var y = e.pageY;
 
-        circle.style.left = (x - offsetX) + "px";
-        circle.style.top = (y - offsetY) + "px";
-    }
+//         circle.style.left = (x - offsetX) + "px";
+//         circle.style.top = (y - offsetY) + "px";
+//     }
 
-    function onMouseUp() {
-        document.removeEventListener('mousemove', onMouseMove);
-        document.removeEventListener('mouseup', onMouseUp);
-        circle.style.cursor = "grab";
-        mousedown = false;
-    }
+//     function onMouseUp() {
+//         document.removeEventListener('mousemove', onMouseMove);
+//         document.removeEventListener('mouseup', onMouseUp);
+//         circle.style.cursor = "grab";
+//         mousedown = false;
+//     }
 
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseup', onMouseUp);
+//     document.addEventListener('mousemove', onMouseMove);
+//     document.addEventListener('mouseup', onMouseUp);
 
-    mousedown = true;
+//     mousedown = true;
 
-});
+// });
 
 let ok_button = document.querySelector("#ok_button")
 let box = document.querySelector("#tos_box")
@@ -157,3 +157,33 @@ ok_button.addEventListener("click", function()
         bg_song.play()
     }, 500)
 })
+
+let circle = document.querySelector(".fake_circle")
+circle.addEventListener("mouseenter", start_dragging)
+window.addEventListener("mousemove", move_cute_dog)
+
+let dragging = false
+let offsetX, offsetY
+let multiplier = 1
+function start_dragging(event)
+{
+    dragging = true;
+    document.body.style.cursor = "none";
+    offsetX = (event.pageX - circle.offsetLeft)
+    offsetY = (event.pageY - circle.offsetTop)
+}
+
+function move_cute_dog(event)
+{
+    if (dragging)
+    {
+        let x = event.pageX - offsetX
+        let y = event.pageY - offsetY
+
+        x *= multiplier
+        y *= multiplier
+        circle.style.left = (x) + "px"
+        circle.style.top = (y) + "px"
+        circle.style.cursor = "none"
+    }
+}
