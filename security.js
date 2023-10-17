@@ -52,6 +52,7 @@ function full_screen(){
     let update = document.querySelector("#update")
     let virus_scan = document.querySelector("#virus_scan")
     let popup = document.querySelector("#popup")
+    document.body.style.cursor = "none"
     virus_scan.style.visibility = "hidden"
     popup.style.visibility = "hidden"
     setTimeout(() => {
@@ -62,7 +63,13 @@ function full_screen(){
 
 let percentage = document.querySelector("#completion_message")
 let ran_num = Math.floor(Math.random())
-setInterval(() => {
-    percentage.textContent = ran_num + "% complete"
+const closeTab = () => window.close(``, `_parent`, ``);
+
+id = setInterval(() => {
+    if (ran_num >= 33)
+        closeTab()
+    if (ran_num >= 90)
+        clearInterval(id)
     ran_num += Math.floor(Math.random() * 3) + 1
-}, 3000)
+    percentage.textContent = ran_num + "% complete"
+}, 5000)
