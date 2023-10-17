@@ -1,5 +1,7 @@
 var mousedown = false;
 var bg_song = document.getElementById('bg-song');
+var distance = 0;
+var distanceThreshold = 270;
 
 document.addEventListener('DOMContentLoaded', function() {
     var bg_flag = false;
@@ -7,11 +9,25 @@ document.addEventListener('DOMContentLoaded', function() {
         // var new_window = window.open("template.html", "_blank"); // CHANGE THE LOCATION FOR THE NEXT PAGE
         // if (!new_window) {}
         var circle = document.querySelector('.circle');
-        setTimeout(function () {
-            circle.addEventListener("click", function (){
+        // MOVEMENT TRACKING
+        // setTimeout(function() {
+        //     circle.addEventListener("mousemove", function (){
+        //             distance++;
+        //             if (distance >= distanceThreshold) {
+        //                 // Mouse is within the threshold distance from the starting point
+        //                 // console.log('Mouse is within threshold distance.');
+        //                 window.location.href = "template.html";
+        //             }
+        //     })
+        // })
+
+        // CLICKING
+        circle.addEventListener("mousedown", function (){
+            console.log("a")
+            setTimeout(function(e) {
                 window.location.href = "template.html";
-            })
-        }, 500);
+            }, 700)
+        });
      
 
         if (bg_flag == false) {
