@@ -118,7 +118,7 @@ function features(pop_up) {
             // if (!new_window) {}
             setTimeout(function () {
                 window.location.href = "welcome.html"
-            }, 500);
+            }, 750);
         }
         if (target.classList.contains("idk"))
         {
@@ -127,7 +127,7 @@ function features(pop_up) {
             {
                 setTimeout(function () {
                     window.location.href = "captcha.html"
-                }, 500);
+                }, 750);
             }
         }
     });
@@ -225,6 +225,7 @@ function type() {
     }
 };
 
+song1.loop = true;
 document.addEventListener("click", type);
 document.addEventListener("click", function() {
     song1.play();
