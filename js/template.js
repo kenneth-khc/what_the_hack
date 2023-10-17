@@ -73,6 +73,12 @@ function features(pop_up) {
 
                     document.body.insertBefore(alert_clone, alert);
                     features(alert_clone);
+                    var audio = alert.querySelector(".header > .controls > #mysound");
+                    function toggleAudio() {
+                        audio.currentTime = 0;
+                        audio.play();
+                    }
+                    toggleAudio();
                 }
             }
         }
