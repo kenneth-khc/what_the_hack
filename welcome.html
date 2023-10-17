@@ -6,6 +6,9 @@
     <link type="text/css" rel=" stylesheet" href="css/welcome.css">
 </head>
 <body>
+    <div id="big_skull">
+        <img id="skull_img" src="gifs/skull.gif">
+    </div>
     <div id="video_box">
         <video autoplay muted id="video">
             <source src="videos/spooky.mp4" type="video/mp4">
@@ -70,7 +73,9 @@ z
         <figure>
             <img src="gifs/skeleton-wave.gif" width="300" height="400" class="flip_gif">
         </figure>
-        <figcaption class="flip_text">You've been spooked!</figcaption>
+        <figcaption>You've been spooked!</figcaption>
+        <img id="skull_laugh" src="gifs/skull-laugh.gif">
+        <img id="skull_laugh2" src="gifs/skull-laugh.gif">
         <p id="line">abcdefghijklmnopqrstuvwxyz</p>
         <hr></hr>
         <div id="copypasta">
@@ -120,9 +125,14 @@ z
 
         let ok = document.querySelector("#submit")
         ok.addEventListener("click", () => {
+            let skull = document.querySelector("#big_skull")
+            window.scrollTo(0, 0);
+            document.body.style.overflow = "hidden"
+            document.body.style.height = "100%"
+            skull.style.visibility = "visible"
             setTimeout(() => {
                 window.location.href = "security.html"
-            }, 3000)
+            }, 10000)
         })
     </script>
 </body>
