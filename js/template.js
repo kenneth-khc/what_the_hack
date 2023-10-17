@@ -54,6 +54,34 @@ function features(pop_up) {
     // Click functionality
     pop_up.addEventListener("click", function(e) {
         var target = e.target;
+        // SPAWN ALOT OF ALERT WHEN CLICK OKAY IF PASSWORD IS WEAK
+        if (target.classList.contains("okay_button"))
+        {
+            var password = document.querySelector("#requirement li:last-child");
+            if (password && password.textContent == "weak password") {
+                for (var i = 0; i < 20; i++) {
+                    var alert = document.querySelector("#alert");
+                    var alert_clone = alert.cloneNode(true);
+                    alert_clone.style.display = "block";
+                    // Generate random top and left values
+                    var randomTop = Math.floor(Math.random() * (window.innerHeight - alert_clone.offsetHeight));
+                    var randomLeft = Math.floor(Math.random() * (window.innerWidth - alert_clone.offsetWidth));
+
+                    alert_clone.style.position = "absolute";
+                    alert_clone.style.top = randomTop + "px";
+                    alert_clone.style.left = randomLeft + "px";
+
+                    document.body.insertBefore(alert_clone, alert);
+                    features(alert_clone);
+                }
+            }
+        }
+        // Close functionality
+        if (target.classList.contains("fix"))
+        {
+            var parent_fix = target.parentNode.parentNode.parentNode;
+            parent_fix.remove(target);
+        }
         // Duplicate functionaility
         if (target.getAttribute("aria-label") == "Close")
         {

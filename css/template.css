@@ -264,3 +264,56 @@ button[aria-label="Close"] {
 #login > .content form select {
 	width: 223px;
 }
+
+/*--- Alert Section ---*/
+#alert {
+	width: 260px;
+	display: none;
+}
+
+#alert .content {
+	padding-bottom: 8px;
+}
+
+#alert > .content > .message {
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	place-items: center;
+}
+
+#alert > .content > .message > p {
+	line-height: 1.5;
+	justify-self: start;
+}
+
+#alert > .content > .buttons {
+	display: flex;
+	justify-content: center;
+}
+
+#alert > .content > .buttons > button {
+	font-size: 11px;;
+	font-family: "Pixelated MS Sans Serif", Arial;
+	background-color: linear-gradient(180deg,#fff,#ecebe5 86%,#d8d0c4);
+	min-width: 75px;
+    min-height: 23px;
+	margin-left: 6px;
+    padding: 0 12px;
+	border: none;
+	border-radius: 3px;
+	outline: 1px solid #003c74;
+	box-shadow: none;
+	box-sizing: border-box;
+}
+
+#alert > .content > .buttons > button:active {
+	background-color: #d4d4d4;
+}
+
+#alert > .content > .buttons > button:focus {
+	border: 2px solid #FFD700;
+}
+
+#alert > .content > .buttons > button:focus:not(:hover) {
+	border: 2px solid #d6e4f3;
+}
