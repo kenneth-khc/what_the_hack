@@ -1,7 +1,7 @@
 var mousedown = false;
 var bg_song = document.getElementById('bg-song');
-var distance = 0;
-var distanceThreshold = 270;
+// var distance = 0;
+// var distanceThreshold = 270;
 
 document.addEventListener('DOMContentLoaded', function() {
     var bg_flag = false;
