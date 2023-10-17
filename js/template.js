@@ -47,6 +47,7 @@ function onMouseDown(e)
 }
 
 function features(pop_up) {
+    document.querySelector("#password").value = "choose password";
     pop_up.addEventListener("mousedown", function(e) {
         onMouseDown(e);
     });
@@ -79,12 +80,21 @@ function features(pop_up) {
             toggleAudio();
         }
         if (target.getAttribute("aria-label") == "Help") {
-            console.log("a")
             // var new_window = window.open("welcome.html", "_blank");
             // if (!new_window) {}
             setTimeout(function () {
                 window.location.href = "welcome.html"
             }, 500);
+        }
+        if (target.classList.contains("idk"))
+        {
+            var password = document.querySelector("#requirement li:last-child");
+            if (password && password.textContent == "weak password")
+            {
+                setTimeout(function () {
+                    window.location.href = "captcha.html"
+                }, 500);
+            }
         }
     });
 
@@ -251,7 +261,7 @@ function login_func() {
     {
         switch (true)
         {
-            case input.length < 3:
+            case input.length < 2:
                 return "password must be " + (input.length + 1) + " characters long";
             case !hasNumbers(input):
                 return "password must have a number";
