@@ -7,7 +7,33 @@ body {
 #video_box{
     position: fixed;
     top: 100px;
+    z-index: 998;
+}
+
+#big_skull {
+    visibility: hidden;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
     z-index: 999;
+    animation: fade_in 2s linear infinite;
+}
+
+#skull_img {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    animation: fade_in 2s linear infinite;
+}
+
+@keyframes fade_in {
+    from {
+        opacity: 0;
+    }
+    to
+    {
+        opacity: 1;
+    }
 }
 
 video {
@@ -21,12 +47,12 @@ video {
     width:150px;
     height: 10000px;
     z-index: 998;
-    background: #C0C0C0;
+    background: rgba(192, 192, 192, 0);
     padding: 5px;
-    box-sizing: border-box;
-    box-shadow: 1px 2px 3px 4px rgba(12,12,12,0.2);
-    border: 5px #828182;
-    border-style: inset;
+    /* box-sizing: border-box; */
+    /* box-shadow: 1px 2px 3px 4px rgba(12,12,12,0.2);
+    border: 5px #828182; */
+    /* border-style: inset; */
 }
 
 @keyframes bold_and_unbold {
@@ -54,12 +80,12 @@ video {
     width:150px;
     height: 10000px;
     z-index: 998;
-    background: #C0C0C0;
+    background: rgba(192, 192, 192, 0);
     padding: 5px;
-    box-sizing: border-box;
-    box-shadow: 1px 2px 3px 4px rgba(12,12,12,0.2);
-    border: 5px #828182;
-    border-style: inset;
+    /* box-sizing: border-box; */
+    /* box-shadow: 1px 2px 3px 4px rgba(12,12,12,0.2); */
+    /* border: 5px #828182; */
+    /* border-style: inset; */
 }
 
 #window {
@@ -225,3 +251,35 @@ hr {
     margin: 100px 0 0 0;
     letter-spacing: 15px;
 }
+
+#skull_laugh {
+    position: sticky;
+    top: 50%;
+    left: 70%;
+    animation: enlarge 2s linear infinite;
+    transform: scaleX(-1);
+}
+
+#skull_laugh2 {
+    position: sticky;
+    top: 50%;
+    left: 10%;
+
+    animation: enlarge 2s linear infinite;
+}
+
+@keyframes enlarge {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        width: 160px;
+        height: 250px;
+    }
+    10%, 30%, 50%, 70%, 90% {
+        width: 200px;
+        height: 300px;
+    }
+}
+
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+  }
