@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Security</title>
+    <link rel="stylesheet" type="text/css" href="css/security.css">
+</head>
+<body>
+    <!-- <div id="message">
+    </div> -->
+    <div id="update">
+        <p class="update_message">Working on updates</p>
+        <p class="update_message" id="completion_message">0% complete</p>
+        <p class="update_message">Don't turn off your PC. This will take a while.</p>
+        <p class="update_message">Your PC will restart several times.</p>
+    </div>
+    <div id="virus_scan">
+        <div id="nav_bar">
+            <pre>—     X</pre>
+        </div>
+        <div id="logo" style="display:inline">
+            <img src="images/windows_logo.png" height="30px" style="margin-left: 20px; margin-right: 10px;">
+        </div>
+        <p id="Microsoft" style="display:inline">Microsoft Windows</p>
+        <div id="license">
+                Activate license
+        </div>
+        <img src="images/gear_192x192.png" id="gear" width="16px">
+        <div id="box">
+            <div id="inner_box">
+                <span>Quick Scan</span>
+                <pre>—     X</pre>
+                <hr>
+                <div id="loading_bar_container">
+                    <p>.</p>
+                    <div id="loading_bar"></div>
+                <table id="scanned_info">
+                    <tr>
+                        <th>Objects scanned</th>
+                        <td id="objects_scanned"></td>
+                    </tr>
+                    <tr>
+                        <th>Time Elapsed</th>
+                        <td id="timer">0 sec</td>
+                    </tr>
+                    <tr>
+                        <th>Threats found</th>
+                        <td id="threats_found" style="font-weight: bold;">None</td>
+                    </tr>
+                </table>
+                <span id="text_boxes">
+                    <span id="cancel" style="font-weight: normal; top:60px">Cancel</span>
+                    <span id="pause" style="font-weight: normal; top:60px; left:50px">Pause</span>
+                    <span id="scheduled" style="font-weight: normal; top:60px; left:410px">Scheduled Scans</span>
+                </span>
+                </div>
+            </div>
+        </div>
+        <div id="popup">
+            <span id="defender">Windows Defender Security Center</span>
+            <hr id="seperator">
+            <span id="fakenews">Threat detected: Trojan Spyware</span>
+            <img id="warning" src="images/warning.png" height="100px">
+            <span id="threat">Access to this PC has been blocked for security reasons.</span>
+            <a id="contact_button">
+                <span id="contact">Contact Windows Support: +146 257 3890 (Security Helpline)</span>
+            </a>
+        </div>
+    </div>
+    <script src="security.js"></script>
+</body>
+</html>

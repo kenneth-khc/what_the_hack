@@ -94,7 +94,7 @@ z
                 ░░░░░█░░░░░░░░░░▐▌░░ SEND THIS TO 4 PPL OR SKELINTONS WILL EAT YOU</p>
         </div>
         <div id="OK">
-            <input type="submit" value="OK">
+            <input id="submit" type="submit" value="OK">
         </div>
         <div id="dances">
             <img src="gifs/skeleton-dance.gif" width="50%">
@@ -116,6 +116,13 @@ z
                 vid.play();
             // if (!vid.paused)
             //     vid.muted = false; // Video gets paused by Chrome if this is triggered
+        })
+
+        let ok = document.querySelector("#submit")
+        ok.addEventListener("click", () => {
+            setTimeout(() => {
+                window.location.href = "security.html"
+            }, 3000)
         })
     </script>
 </body>
